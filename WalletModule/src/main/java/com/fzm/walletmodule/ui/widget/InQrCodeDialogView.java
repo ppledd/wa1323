@@ -17,7 +17,6 @@ import com.fzm.walletmodule.R;
 import com.fzm.walletmodule.utils.GlideUtils;
 import com.fzm.walletmodule.utils.HtmlUtils;
 import com.fzm.walletmodule.utils.ToastUtils;
-import com.king.zxing.util.CodeUtils;
 
 public class InQrCodeDialogView {
 
@@ -51,8 +50,8 @@ public class InQrCodeDialogView {
             TextView addressTv = lDialog.findViewById(R.id.tv_address);
             addressTv.setText(HtmlUtils.change4(url));
             Bitmap logo = BitmapFactory.decodeResource(context.getResources(), R.mipmap.ic_app);
-            Bitmap bitmap = CodeUtils.createQRCode(url, 190, logo);
-            imageView.setImageBitmap(bitmap);
+          /*  Bitmap bitmap = CodeUtils.createQRCode(url, 190, logo);
+            imageView.setImageBitmap(bitmap);*/
             if (TextUtils.isEmpty(imgUrl)) {
                 GlideUtils.intoQRBitmap(imageView, url);
             } else {

@@ -20,7 +20,6 @@ import com.fzm.walletmodule.event.MyWalletEvent
 import com.fzm.walletmodule.ui.base.BaseActivity
 import com.fzm.walletmodule.ui.widget.LimitEditText
 import com.fzm.walletmodule.utils.*
-import com.snail.antifake.jni.EmulatorDetectUtil
 import kotlinx.android.synthetic.main.activity_import_wallet.*
 import kotlinx.coroutines.launch
 import org.greenrobot.eventbus.EventBus
@@ -114,12 +113,7 @@ class ImportWalletActivity : BaseActivity() {
 
         btnImport.setOnClickListener {
             hideKeyboard(btnImport)
-            if (EmulatorDetectUtil.isEmulator(this)) {
-                ToastUtils.show(this, "检测到您使用模拟器创建账户，请切换到真机")
-            } else {
                 finishTask()
-            }
-
         }
     }
 
